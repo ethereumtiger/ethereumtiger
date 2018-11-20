@@ -311,7 +311,9 @@ func (ethash *Ethash) CalcDifficulty(chain consensus.ChainReader, time uint64, p
 // the difficulty that a new block should have when created at time
 // given the parent block's time and difficulty.
 func CalcDifficulty(config *params.ChainConfig, time uint64, parent *types.Header) *big.Int {
-	next := new(big.Int).Add(parent.Number, big1)
+	return calcDifficultyByzantium(time, parent)
+
+    /*
 	switch {
 	case config.IsConstantinople(next):
 		return calcDifficultyConstantinople(time, parent)
@@ -321,7 +323,7 @@ func CalcDifficulty(config *params.ChainConfig, time uint64, parent *types.Heade
 		return calcDifficultyHomestead(time, parent)
 	default:
 		return calcDifficultyFrontier(time, parent)
-	}
+	} */
 }
 
 // Some weird constants to avoid constant memory allocs for them.
@@ -340,7 +342,7 @@ var (
 func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *types.Header) *big.Int {
 	// Note, the calculations below looks at the parent number, which is 1 below
 	// the block number. Thus we remove one from the delay given
-	bombDelayFromParent := new(big.Int).Sub(bombDelay, big1)
+	// bombDelayFromParent := new(big.Int).Sub(bombDelay, big1)
 	return func(time uint64, parent *types.Header) *big.Int {
 		// https://github.com/ethereum/EIPs/issues/100.
 		// algorithm:
@@ -358,11 +360,12 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		// (2 if len(parent_uncles) else 1) - (block_timestamp - parent_timestamp) // 9
 		x.Sub(bigTime, bigParentTime)
 		x.Div(x, big9)
-		if parent.UncleHash == types.EmptyUncleHash {
-			x.Sub(big1, x)
-		} else {
+
+		//if parent.UncleHash == types.EmptyUncleHash {
+		x.Sub(big1, x)
+		/*} else {
 			x.Sub(big2, x)
-		}
+		}*/
 		// max((2 if len(parent_uncles) else 1) - (block_timestamp - parent_timestamp) // 9, -99)
 		if x.Cmp(bigMinus99) < 0 {
 			x.Set(bigMinus99)
@@ -376,8 +379,10 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		if x.Cmp(params.MinimumDifficulty) < 0 {
 			x.Set(params.MinimumDifficulty)
 		}
+
 		// calculate a fake block number for the ice-age delay
 		// Specification: https://eips.ethereum.org/EIPS/eip-1234
+		/*
 		fakeBlockNumber := new(big.Int)
 		if parent.Number.Cmp(bombDelayFromParent) >= 0 {
 			fakeBlockNumber = fakeBlockNumber.Sub(parent.Number, bombDelayFromParent)
@@ -392,7 +397,7 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 			y.Sub(periodCount, big2)
 			y.Exp(big2, y, nil)
 			x.Add(x, y)
-		}
+		}*/
 		return x
 	}
 }
@@ -607,7 +612,7 @@ var (
 // included uncles. The coinbase of each uncle block is also rewarded.
 func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header *types.Header, uncles []*types.Header) {
 	// Select the correct block reward based on chain progression
-	blockReward := FrontierBlockReward
+	/*blockReward := FrontierBlockReward
 	if config.IsByzantium(header.Number) {
 		blockReward = ByzantiumBlockReward
 	}
@@ -627,5 +632,16 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 		r.Div(blockReward, big32)
 		reward.Add(reward, r)
 	}
+	state.AddBalance(header.Coinbase, reward)*/
+	reward := big.NewInt(5e+18)
+	round  := big.NewInt(10)
+
+	halvings := new(big.Int)
+	halvings.Div(header.Number, round)
+	halvings.Exp(big2, halvings, nil)
+
+	reward.Div(reward, halvings)
+
 	state.AddBalance(header.Coinbase, reward)
+
 }
