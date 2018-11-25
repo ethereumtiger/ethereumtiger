@@ -22,11 +22,11 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/prque"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/common/prque"
+	"github.com/ethereumtiger/ethereumtiger/consensus"
+	"github.com/ethereumtiger/ethereumtiger/core/types"
+	"github.com/ethereumtiger/ethereumtiger/log"
 )
 
 const (

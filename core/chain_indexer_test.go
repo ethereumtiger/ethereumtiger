@@ -24,10 +24,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/core/rawdb"
+	"github.com/ethereumtiger/ethereumtiger/core/types"
+	"github.com/ethereumtiger/ethereumtiger/ethdb"
 )
 
 // Runs multiple tests with randomized parameters.

@@ -23,15 +23,15 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/common/math"
+	"github.com/ethereumtiger/ethereumtiger/consensus/ethash"
+	"github.com/ethereumtiger/ethereumtiger/core/rawdb"
+	"github.com/ethereumtiger/ethereumtiger/core/types"
+	"github.com/ethereumtiger/ethereumtiger/core/vm"
+	"github.com/ethereumtiger/ethereumtiger/crypto"
+	"github.com/ethereumtiger/ethereumtiger/ethdb"
+	"github.com/ethereumtiger/ethereumtiger/params"
 )
 
 func BenchmarkInsertChain_empty_memdb(b *testing.B) {

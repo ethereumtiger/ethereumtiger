@@ -20,7 +20,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/ethereumtiger/ethereumtiger/log"
 
 	cli "gopkg.in/urfave/cli.v1"
 )

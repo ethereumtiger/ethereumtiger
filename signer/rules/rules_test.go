@@ -22,13 +22,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/ethereumtiger/ethereumtiger/accounts"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/common/hexutil"
+	"github.com/ethereumtiger/ethereumtiger/core/types"
+	"github.com/ethereumtiger/ethereumtiger/internal/ethapi"
+	"github.com/ethereumtiger/ethereumtiger/signer/core"
+	"github.com/ethereumtiger/ethereumtiger/signer/storage"
 )
 
 const JS = `

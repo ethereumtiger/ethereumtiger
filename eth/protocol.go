@@ -21,11 +21,11 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/core"
+	"github.com/ethereumtiger/ethereumtiger/core/types"
+	"github.com/ethereumtiger/ethereumtiger/event"
+	"github.com/ethereumtiger/ethereumtiger/rlp"
 )
 
 // Constants to match up protocol versions and messages

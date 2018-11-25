@@ -21,9 +21,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/ethereumtiger/ethereumtiger/log"
+	"github.com/ethereumtiger/ethereumtiger/p2p/enode"
+	"github.com/ethereumtiger/ethereumtiger/swarm/storage"
 )
 
 var searchTimeout = 1 * time.Second

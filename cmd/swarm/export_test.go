@@ -26,8 +26,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/swarm"
-	"github.com/ethereum/go-ethereum/swarm/testutil"
+	"github.com/ethereumtiger/ethereumtiger/swarm"
+	"github.com/ethereumtiger/ethereumtiger/swarm/testutil"
 )
 
 // TestCLISwarmExportImport perform the following test:

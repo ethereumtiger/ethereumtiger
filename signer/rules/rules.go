@@ -22,12 +22,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/rules/deps"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/internal/ethapi"
+	"github.com/ethereumtiger/ethereumtiger/log"
+	"github.com/ethereumtiger/ethereumtiger/signer/core"
+	"github.com/ethereumtiger/ethereumtiger/signer/rules/deps"
+	"github.com/ethereumtiger/ethereumtiger/signer/storage"
 	"github.com/robertkrimen/otto"
 )
 

@@ -24,14 +24,14 @@ import (
 	"net"
 	"os"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/discv5"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
+	"github.com/ethereumtiger/ethereumtiger/cmd/utils"
+	"github.com/ethereumtiger/ethereumtiger/crypto"
+	"github.com/ethereumtiger/ethereumtiger/log"
+	"github.com/ethereumtiger/ethereumtiger/p2p/discover"
+	"github.com/ethereumtiger/ethereumtiger/p2p/discv5"
+	"github.com/ethereumtiger/ethereumtiger/p2p/enode"
+	"github.com/ethereumtiger/ethereumtiger/p2p/nat"
+	"github.com/ethereumtiger/ethereumtiger/p2p/netutil"
 )
 
 func main() {

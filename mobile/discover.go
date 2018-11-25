@@ -22,7 +22,7 @@ package geth
 import (
 	"errors"
 
-	"github.com/ethereum/go-ethereum/p2p/discv5"
+	"github.com/ethereumtiger/ethereumtiger/p2p/discv5"
 )
 
 // Enode represents a host on the network.

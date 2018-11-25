@@ -24,15 +24,15 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/swarm/api"
-	swarm "github.com/ethereum/go-ethereum/swarm/api/client"
-	swarmhttp "github.com/ethereum/go-ethereum/swarm/api/http"
-	"github.com/ethereum/go-ethereum/swarm/storage/feed"
-	"github.com/ethereum/go-ethereum/swarm/storage/feed/lookup"
-	"github.com/ethereum/go-ethereum/swarm/testutil"
+	"github.com/ethereumtiger/ethereumtiger/common/hexutil"
+	"github.com/ethereumtiger/ethereumtiger/crypto"
+	"github.com/ethereumtiger/ethereumtiger/log"
+	"github.com/ethereumtiger/ethereumtiger/swarm/api"
+	swarm "github.com/ethereumtiger/ethereumtiger/swarm/api/client"
+	swarmhttp "github.com/ethereumtiger/ethereumtiger/swarm/api/http"
+	"github.com/ethereumtiger/ethereumtiger/swarm/storage/feed"
+	"github.com/ethereumtiger/ethereumtiger/swarm/storage/feed/lookup"
+	"github.com/ethereumtiger/ethereumtiger/swarm/testutil"
 )
 
 func TestCLIFeedUpdate(t *testing.T) {

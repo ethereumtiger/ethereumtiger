@@ -34,10 +34,10 @@ import (
 	"io/ioutil"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/swarm/log"
-	"github.com/ethereum/go-ethereum/swarm/storage/mock"
+	"github.com/ethereumtiger/ethereumtiger/metrics"
+	"github.com/ethereumtiger/ethereumtiger/rlp"
+	"github.com/ethereumtiger/ethereumtiger/swarm/log"
+	"github.com/ethereumtiger/ethereumtiger/swarm/storage/mock"
 	"github.com/syndtr/goleveldb/leveldb"
 )
 

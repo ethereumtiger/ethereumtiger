@@ -6,11 +6,11 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/swarm/api"
-	"github.com/ethereum/go-ethereum/swarm/log"
-	"github.com/ethereum/go-ethereum/swarm/sctx"
-	"github.com/ethereum/go-ethereum/swarm/spancontext"
+	"github.com/ethereumtiger/ethereumtiger/metrics"
+	"github.com/ethereumtiger/ethereumtiger/swarm/api"
+	"github.com/ethereumtiger/ethereumtiger/swarm/log"
+	"github.com/ethereumtiger/ethereumtiger/swarm/sctx"
+	"github.com/ethereumtiger/ethereumtiger/swarm/spancontext"
 	"github.com/pborman/uuid"
 )
 

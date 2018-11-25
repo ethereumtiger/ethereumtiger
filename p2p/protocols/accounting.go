@@ -16,7 +16,7 @@
 
 package protocols
 
-import "github.com/ethereum/go-ethereum/metrics"
+import "github.com/ethereumtiger/ethereumtiger/metrics"
 
 //define some metrics
 var (

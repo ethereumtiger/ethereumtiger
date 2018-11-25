@@ -26,10 +26,10 @@ import (
 	"hash"
 	"io"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
-	"github.com/ethereum/go-ethereum/swarm/bmt"
-	ch "github.com/ethereum/go-ethereum/swarm/chunk"
+	"github.com/ethereumtiger/ethereumtiger/common"
+	"github.com/ethereumtiger/ethereumtiger/crypto/sha3"
+	"github.com/ethereumtiger/ethereumtiger/swarm/bmt"
+	ch "github.com/ethereumtiger/ethereumtiger/swarm/chunk"
 )
 
 const MaxPO = 16
