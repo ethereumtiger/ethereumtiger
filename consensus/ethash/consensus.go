@@ -34,6 +34,7 @@ import (
 	"github.com/ethereumtiger/ethereumtiger/crypto/sha3"
 	"github.com/ethereumtiger/ethereumtiger/params"
 	"github.com/ethereumtiger/ethereumtiger/rlp"
+	"github.com/ethereumtiger/ethereumtiger/log"
 )
 
 // Ethash proof-of-work protocol constants.
@@ -398,6 +399,9 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 			y.Exp(big2, y, nil)
 			x.Add(x, y)
 		}*/
+
+		log.Info("Diff", "diff", x)
+
 		return x
 	}
 }
@@ -633,8 +637,16 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 		reward.Add(reward, r)
 	}
 	state.AddBalance(header.Coinbase, reward)*/
-	reward := big.NewInt(5e+18)
-	round  := big.NewInt(10)
+
+	reward    := big.NewInt(5e+18)
+	round     := big.NewInt(210000)
+	instamine := big.NewInt(22222)
+
+	if header.Number.Cmp(big1) == 0 {
+		reward = reward.Mul(reward, big.NewInt(200000))
+	} else if header.Number.Cmp(instamine) > 0 {
+		reward = reward.Mul(reward, big10)
+	}
 
 	halvings := new(big.Int)
 	halvings.Div(header.Number, round)
@@ -643,5 +655,7 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 	reward.Div(reward, halvings)
 
 	state.AddBalance(header.Coinbase, reward)
+
+	log.Info("Reward", "reward", new(big.Float).SetInt(reward).Quo(new(big.Float).SetInt(reward), big.NewFloat(1e+18)))
 
 }
