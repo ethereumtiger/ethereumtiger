@@ -831,7 +831,7 @@ func (w *worker) commitNewWork(interrupt *int32, noempty bool, timestamp int64) 
 	if now := time.Now().Unix(); timestamp > now+1 {
 		wait := time.Duration(timestamp-now) * time.Second
 		log.Info("Mining too far in the future", "wait", common.PrettyDuration(wait))
-		time.Sleep(wait)
+		//time.Sleep(wait)
 	}
 
 	num := parent.Number()
