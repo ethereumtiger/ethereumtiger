@@ -378,7 +378,7 @@ func RandomAddr() *BzzAddr {
 	if err != nil {
 		panic("unable to generate key")
 	}
-	node := enode.NewV4(&key.PublicKey, net.IP{127, 0, 0, 1}, 70707, 70707)
+	node := enode.NewV4(&key.PublicKey, net.IP{127, 0, 0, 1}, 30707, 30707)
 	return NewAddr(node)
 }
 

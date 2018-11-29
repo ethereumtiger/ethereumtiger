@@ -24,14 +24,14 @@ Section "Geth" GETH_IDX
   createShortCut "$SMPROGRAMS\${APPNAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "" ""
 
   # Firewall - remove rules (if exists)
-  SimpleFC::AdvRemoveRule "Geth incoming peers (TCP:70707)"
-  SimpleFC::AdvRemoveRule "Geth outgoing peers (TCP:70707)"
-  SimpleFC::AdvRemoveRule "Geth UDP discovery (UDP:70707)"
+  SimpleFC::AdvRemoveRule "Geth incoming peers (TCP:30707)"
+  SimpleFC::AdvRemoveRule "Geth outgoing peers (TCP:30707)"
+  SimpleFC::AdvRemoveRule "Geth UDP discovery (UDP:30707)"
 
   # Firewall - add rules
-  SimpleFC::AdvAddRule "Geth incoming peers (TCP:70707)" ""  6 1 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" 70707 "" "" ""
-  SimpleFC::AdvAddRule "Geth outgoing peers (TCP:70707)" ""  6 2 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" "" 70707 "" ""
-  SimpleFC::AdvAddRule "Geth UDP discovery (UDP:70707)" "" 17 2 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" "" 70707 "" ""
+  SimpleFC::AdvAddRule "Geth incoming peers (TCP:30707)" ""  6 1 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" 30707 "" "" ""
+  SimpleFC::AdvAddRule "Geth outgoing peers (TCP:30707)" ""  6 2 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" "" 30707 "" ""
+  SimpleFC::AdvAddRule "Geth UDP discovery (UDP:30707)" "" 17 2 1 2147483647 1 "$INSTDIR\geth.exe" "" "" "Ethereum" "" 30707 "" ""
 
   # Set default IPC endpoint (https://github.com/ethereum/EIPs/issues/147)
   ${EnvVarUpdate} $0 "ETHEREUM_SOCKET" "R" "HKLM" "\\.\pipe\geth.ipc"
